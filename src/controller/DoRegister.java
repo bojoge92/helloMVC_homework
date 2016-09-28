@@ -31,7 +31,6 @@ public class DoRegister extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doResgister doPost");
 		
 		String customerId = request.getParameter("id");
 		String passwd = request.getParameter("password");
@@ -39,23 +38,10 @@ public class DoRegister extends HttpServlet {
 		String cusGender = request.getParameter("gender_check");
 		String cusEmail = request.getParameter("email");
 		
-		List<Customer> customers = new ArrayList<>();
-		/*customers.add(new Customer(customerId, passwd, cusName, cusGender, cusEmail));
-		
-		customers.add(new Customer("test", "test1", "testName", "Women", "test@test.com"));*/
-		
 		CustomerService service = (CustomerService) CustomerService.getInstance();
 		
 		service.addCustomer(new Customer(customerId, passwd, cusName, cusGender, cusEmail));
 		
-		/*
-		List<Customer> customers = new ArrayList<>();
-		customers.add(new Customer(customerId, passwd, cusName, cusGender, cusEmail));
-		
-		customers.add(new Customer("test", "test1", "testName", "Women", "test@test.com"));
-		
-		System.out.println("success registering customer");
-		*/
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
 		dispatcher.forward(request, response);
 		

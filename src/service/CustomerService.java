@@ -32,10 +32,6 @@ public class CustomerService {
 
 	public Customer login(String id, String password) {
 
-		System.out.println(customers.size());
-
-		System.out.println("Login");
-		System.out.println(customers.get(id.toLowerCase()).equals(id));
 		
 		try {
 			customers.get(id.toLowerCase());

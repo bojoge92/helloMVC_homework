@@ -35,7 +35,6 @@ public class DoLogin extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		System.out.println("DoLogin doPost");
 
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
